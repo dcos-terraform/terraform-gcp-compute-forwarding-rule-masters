@@ -8,7 +8,7 @@
  *
  *```hcl
  * module "dcos-forwarding-rule-masters" {
- *   source  = "terraform-dcos/compute-forwarding-rule-masters/gcp"
+ *   source  = "dcos-terraform/compute-forwarding-rule-masters/gcp"
  *   version = "~> 0.1"
  *
  *   name_prefix = "production"
@@ -21,7 +21,7 @@
 provider "google" {}
 
 module "dcos-forwarding-rule-masters" {
-  source  = "terraform-dcos/compute-forwarding-rule/gcp"
+  source  = "dcos-terraform/compute-forwarding-rule/gcp"
   version = "~> 0.0"
 
   name_prefix = "${var.name_prefix}"
@@ -29,7 +29,7 @@ module "dcos-forwarding-rule-masters" {
   instances_self_link = ["${var.masters_self_link}"]
   name_format         = "${var.name_format}"
 
-  additional_rules = "${var.additional_rules}"
+  additional_rules = ["${var.additional_rules}"]
 
   health_check {
     target = "/"
