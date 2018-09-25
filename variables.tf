@@ -14,6 +14,6 @@ variable "masters_self_link" {
 }
 
 variable "additional_rules" {
-  description = "Additional list of rules. These Rules are an additon to the default rules."
+  description = "List of additional rules"
   default     = []
 }

@@ -1,4 +1,4 @@
 output "ip_address" {
-  description = "IP Address of master load balancer"
+  description = "Load balancer ip address"
   value       = "${module.dcos-forwarding-rule-masters.ip_address}"
 }
