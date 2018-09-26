@@ -4,7 +4,7 @@ variable "name_prefix" {
 
 variable "name_format" {
   description = "printf style format for naming the ELB. Gets truncated to 32 characters. (input cluster_name)"
-  default     = "%s-master-forwarding-rule"
+  default     = "m-%s"
 }
 
 variable "masters_self_link" {
