@@ -17,3 +17,9 @@ variable "additional_rules" {
   description = "List of additional rules"
   default     = []
 }
+
+variable "labels" {
+  description = "Add custom labels to all resources"
+  type        = "map"
+  default     = {}
+}

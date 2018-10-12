@@ -35,4 +35,6 @@ module "dcos-forwarding-rule-masters" {
     target = "/"
     port   = "5050"
   }
+
+  labels = "${var.labels}"
 }
