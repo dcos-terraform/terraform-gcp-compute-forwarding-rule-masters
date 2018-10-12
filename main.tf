@@ -11,7 +11,7 @@
  *   source  = "dcos-terraform/compute-forwarding-rule-masters/gcp"
  *   version = "~> 0.1"
  *
- *   name_prefix = "production"
+ *   cluster_name = "production"
  *
  *   masters_self_link = [${"module.masters.instances_self_link"}]
  * }
@@ -24,7 +24,7 @@ module "dcos-forwarding-rule-masters" {
   source  = "dcos-terraform/compute-forwarding-rule/gcp"
   version = "~> 0.0"
 
-  name_prefix = "${var.name_prefix}"
+  cluster_name = "${var.cluster_name}"
 
   instances_self_link = ["${var.masters_self_link}"]
   name_format         = "${var.name_format}"
