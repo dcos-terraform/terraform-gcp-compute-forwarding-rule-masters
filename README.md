@@ -23,6 +23,7 @@ module "dcos-forwarding-rule-masters" {
 |------|-------------|:----:|:-----:|:-----:|
 | additional_rules | List of additional rules | string | `<list>` | no |
 | cluster_name | Cluster Name | string | - | yes |
+| labels | Add custom labels to all resources | map | `<map>` | no |
 | masters_self_link | List of master instances self links | list | `<list>` | no |
 | name_format | printf style format for naming the ELB. Gets truncated to 32 characters. (input cluster_name) | string | `m-%s` | no |
 
