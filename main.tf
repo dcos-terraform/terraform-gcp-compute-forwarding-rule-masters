@@ -22,7 +22,7 @@ provider "google" {}
 
 module "dcos-forwarding-rule-masters" {
   source  = "dcos-terraform/compute-forwarding-rule/gcp"
-  version = "~> 0.0"
+  version = "~> 0.1.0"
 
   cluster_name = "${var.cluster_name}"
 
