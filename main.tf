@@ -18,7 +18,7 @@
  *```
  */
 
-provider "google" {}
+provider "google-beta" {}
 
 module "dcos-forwarding-rule-masters" {
   source  = "dcos-terraform/compute-forwarding-rule/gcp"
@@ -39,6 +39,6 @@ module "dcos-forwarding-rule-masters" {
   labels = "${var.labels}"
   
   providers = {
-    google = "google"
+    google-beta = "google-beta"
   }
 }
