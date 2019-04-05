@@ -37,7 +37,7 @@ module "dcos-forwarding-rule-masters" {
   }
 
   labels = "${var.labels}"
-  
+
   providers = {
     google = "google"
   }
