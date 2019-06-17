@@ -23,3 +23,13 @@ variable "labels" {
   type        = "map"
   default     = {}
 }
+
+variable "disable" {
+  description = "Do not create forwarding rules and its resources"
+  default     = false
+}
+
+variable "name_prefix" {
+  description = "Name Prefix"
+  default     = ""
+}

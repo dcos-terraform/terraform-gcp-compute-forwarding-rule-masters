@@ -28,6 +28,8 @@ module "dcos-forwarding-rule-masters" {
 
   instances_self_link = ["${var.masters_self_link}"]
   name_format         = "${var.name_format}"
+  disable             = "${var.disable}"
+  name_prefix         = "${var.name_prefix}"
 
   additional_rules = ["${var.additional_rules}"]
 
