@@ -22,9 +22,11 @@ module "dcos-forwarding-rule-masters" {
 |------|-------------|:----:|:-----:|:-----:|
 | cluster\_name | Name of the DC/OS cluster | string | n/a | yes |
 | additional\_rules | List of additional rules | list | `<list>` | no |
+| disable | Do not create load balancer and its resources | string | `"false"` | no |
 | labels | Add custom labels to all resources | map | `<map>` | no |
 | masters\_self\_link | List of master instances self links | list | `<list>` | no |
 | name\_format | printf style format for naming the ELB. Gets truncated to 32 characters. (input cluster_name) | string | `"m-%s"` | no |
+| name\_prefix | Name Prefix | string | `""` | no |
 
 ## Outputs
 

@@ -25,7 +25,7 @@ variable "labels" {
 }
 
 variable "disable" {
-  description = "Do not create forwarding rules and its resources"
+  description = "Do not create load balancer and its resources"
   default     = false
 }
 
