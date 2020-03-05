@@ -20,6 +20,19 @@
 
 provider "google" {}
 
+locals {
+  // 443 and 80 are automatically enabled in `dcos-terraform/compute-forwarding-rule/gcp` module
+  default_rules = [
+    {
+      port_range            = "${var.adminrouter_grpc_proxy_port}"
+      load_balancing_scheme = "EXTERNAL"
+      ip_protocol           = "TCP"
+    },
+  ]
+
+  concat_rules = ["${concat(local.default_rules,var.additional_rules)}"]
+}
+
 module "dcos-forwarding-rule-masters" {
   source  = "dcos-terraform/compute-forwarding-rule/gcp"
   version = "~> 0.2.0"
@@ -31,7 +44,7 @@ module "dcos-forwarding-rule-masters" {
   disable             = "${var.disable}"
   name_prefix         = "${var.name_prefix}"
 
-  additional_rules = ["${var.additional_rules}"]
+  additional_rules = ["${local.concat_rules}"]
 
   health_check {
     target = "/"
