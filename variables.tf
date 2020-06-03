@@ -9,7 +9,7 @@ variable "name_format" {
 
 variable "masters_self_link" {
   description = "List of master instances self links"
-  type        = "list"
+  type        = list(string)
   default     = []
 }
 
@@ -20,7 +20,7 @@ variable "additional_rules" {
 
 variable "labels" {
   description = "Add custom labels to all resources"
-  type        = "map"
+  type        = map(string)
   default     = {}
 }
 
@@ -33,3 +33,4 @@ variable "name_prefix" {
   description = "Name Prefix"
   default     = ""
 }
+

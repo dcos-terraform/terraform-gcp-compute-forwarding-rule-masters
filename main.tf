@@ -18,29 +18,30 @@
  *```
  */
 
-provider "google" {}
+provider "google" {
+}
 
 module "dcos-forwarding-rule-masters" {
   source  = "dcos-terraform/compute-forwarding-rule/gcp"
-  version = "~> 0.2.0"
+  version = "~> 0.3.0"
 
-  cluster_name = "${var.cluster_name}"
+  cluster_name = var.cluster_name
 
-  instances_self_link = ["${var.masters_self_link}"]
-  name_format         = "${var.name_format}"
-  disable             = "${var.disable}"
-  name_prefix         = "${var.name_prefix}"
+  instances_self_link = [var.masters_self_link]
+  name_format         = var.name_format
+  disable             = var.disable
+  name_prefix         = var.name_prefix
 
-  additional_rules = ["${var.additional_rules}"]
+  additional_rules = [var.additional_rules]
 
-  health_check {
+  health_check = {
     target = "/"
     port   = "5050"
   }
 
-  labels = "${var.labels}"
+  labels = var.labels
 
   providers = {
-    google = "google"
+    google = google
   }
 }
