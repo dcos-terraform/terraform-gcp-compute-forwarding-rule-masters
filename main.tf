@@ -27,12 +27,12 @@ module "dcos-forwarding-rule-masters" {
 
   cluster_name = var.cluster_name
 
-  instances_self_link = [var.masters_self_link]
+  instances_self_link = var.masters_self_link
   name_format         = var.name_format
   disable             = var.disable
   name_prefix         = var.name_prefix
 
-  additional_rules = [var.additional_rules]
+  additional_rules = var.additional_rules
 
   health_check = {
     target = "/"
